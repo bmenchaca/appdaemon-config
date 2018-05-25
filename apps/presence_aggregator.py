@@ -144,7 +144,6 @@ class PresenceAggregator(hass.Hass):
         if self.away_count >= self.away_consensus:
             self.log("Away consensus delay completed, changing state to %s" % self.away_state)
             self.select_option(self.args["presence_select"], self.away_state)
-            self.args["presence_select"] = self.away_state
         else:
             self.log("Away consensus delay completed, but no longer have consensus, no change.")
 
