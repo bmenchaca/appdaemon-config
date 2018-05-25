@@ -97,7 +97,7 @@ class PresenceAggregator(hass.Hass):
         # If we are now above the consensus for home...
         if self.home_count >= self.home_consensus:
             # If we above consensus and not on a delay, change now        
-            if not self.args["home_delay"]: 
+            if "home_delay" not in self.args: 
                 self.select_option(self.args["presence_select"], self.home_state)
             # If we are on a delay and don't have a timer, start one
             elif not self.home_delay_timer:
@@ -122,7 +122,7 @@ class PresenceAggregator(hass.Hass):
         # If we are now above the consensus for away...
         if self.away_count >= self.away_consensus:
             # If we above consensus and not on a delay, change now        
-            if not self.args["away_delay"]: 
+            if "away_delay" not in self.args: 
                 self.select_option(self.args["presence_select"], self.away_state)
             # If we are on a delay and don't have a timer, start one
             elif not self.away_delay_timer:
