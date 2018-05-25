@@ -101,7 +101,7 @@ class PresenceAggregator(hass.Hass):
                 self.select_option(self.args["presence_select"], self.home_state)
             # If we are on a delay and don't have a timer, start one
             elif not self.home_delay_timer:
-                self.home_delay_timer = self.run_in(home_consensus_delay_callback, self.args["home_delay"])
+                self.home_delay_timer = self.run_in(self.home_consensus_delay_callback, self.args["home_delay"])
   
 
     def tracker_is_away(self, entity, attribute, old, new, kwargs):
@@ -126,7 +126,7 @@ class PresenceAggregator(hass.Hass):
                 self.select_option(self.args["presence_select"], self.away_state)
             # If we are on a delay and don't have a timer, start one
             elif not self.away_delay_timer:
-                self.away_delay_timer = self.run_in(away_consensus_delay_callback, self.args["away_delay"])
+                self.away_delay_timer = self.run_in(self.away_consensus_delay_callback, self.args["away_delay"])
 
 
     def home_consensus_delay_callback(self, kwargs):
