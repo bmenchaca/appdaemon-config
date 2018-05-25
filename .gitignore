@@ -102,3 +102,7 @@ ENV/
 
 # Don't include secrets
 secrets.yaml
+
+
+# vim swap files
+*.swp
