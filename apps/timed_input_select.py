@@ -34,5 +34,5 @@ class TimedInputSelect(hass.Hass):
                            selector=self.args["selector"], key=selector_key)
     
 
-    def advance_selector(self, entity, attribute, old, new, kwargs):
+    def advance_selector(self, kwargs):
         self.select_option(selector, key)
