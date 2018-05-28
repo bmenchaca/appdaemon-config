@@ -31,8 +31,8 @@ class TimedInputSelect(hass.Hass):
             time_struct = datetime.datetime.strptime(hms, '%H:%M:%S').time()
             self.log("Setting timer to change to %s at %s each day" % (selector_key, time_struct))
             self.run_daily(self.advance_selector, time_struct,
-                           **{"selector": self.args["selector"], "selector_key": "selector_key"})
+                           selector=self.args["selector"], key=selector_key)
     
 
     def advance_selector(self, entity, attribute, old, new, kwargs):
-        self.select_option(selector, selector_key)
+        self.select_option(selector, key)
