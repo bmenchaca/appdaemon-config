@@ -38,9 +38,9 @@ class SunriseSunset(hass.Hass):
                 self.run_at_sunrise(self.sunrise)
     
 
-    def sunrise(self, entity, attribute, old, new, kwargs):
+    def sunrise(self, kwargs):
         self.turn_on(self.args["entity_day"])
   
 
-    def sunset(self, entity, attribute, old, new, kwargs):
+    def sunset(self, kwargs):
         self.turn_on(self.args["entity_night"])
