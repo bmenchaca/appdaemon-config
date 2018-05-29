@@ -32,7 +32,32 @@ class TimedInputSelect(hass.Hass):
             self.log("Setting timer to change to %s at %s each day" % (selector_key, time_struct))
             self.run_daily(self.advance_selector, time_struct,
                            selector=self.args["selector"], key=selector_key)
+
+        # Also, listen for HA to restart so we can re-set the selector
+        self.listen_event(self.ha_event, "plugin_started")
     
 
     def advance_selector(self, kwargs):
         self.select_option(kwargs["selector"], kwargs["key"])
+
+    def ha_event(self, event_name, data, kwargs):
+        self.log("HA restart detected, finding correct time of day.")
+        schedule_list = []
+        for (selector_key, hms) in self.args["schedule"].items():
+            dt = datetime.datetime.strptime(hms, '%H:%M:%S').time()
+            schedule_list.append((selector_key, dt))
+        sorted_list = sorted(schedule_list, key=lambda p: p[1])
+        self.log("List of times: %s." % sorted_list)
+        current = datetime.datetime.now().time()
+        selected = sorted_list[-1][0];
+        for (key, hms) in sorted_list:
+            if current < hms:
+                self.select_option(self.args["selector"], selected)
+                self.log("Selected %s since current time %s is less than %s." %
+                         (selected, current, hms))
+                return
+            else:
+                selected = key
+        self.select_option(kwargs["selector"], selected)
+        self.log("Selecting last entry %s since current time %s is greater than last time %s." % (selected, current, sorted_list[-1][1]))
+

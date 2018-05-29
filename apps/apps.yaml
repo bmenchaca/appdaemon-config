@@ -226,6 +226,18 @@ guest_bathroom_motion_light_not_night:
   constrain_input_select: input_select.house_mode,Morning,Day,Evening,Naptime
   off_delay: 600
 
+guest_bathroom_motion_light_night:
+  class: SensorLight
+  module: sensor_light
+  sensor: binary_sensor.guest_bathroom_occupancy
+  entity_on: light.guest_bath_color
+  entity_on_brightness: 10
+  entity_on_color: "darkred"
+  entity_off: light.guest_bath_color
+  constrain_input_select: input_select.house_mode,Night
+  off_delay: 600
+
+
 boys_bathroom_motion_light_night:
   class: SensorLight
   module: sensor_light
