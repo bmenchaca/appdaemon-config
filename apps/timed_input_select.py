@@ -35,4 +35,4 @@ class TimedInputSelect(hass.Hass):
     
 
     def advance_selector(self, kwargs):
-        self.select_option(selector, key)
+        self.select_option(kwargs["selector"], kwargs["key"])
