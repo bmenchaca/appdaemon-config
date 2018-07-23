@@ -39,8 +39,10 @@ class SunriseSunset(hass.Hass):
     
 
     def sunrise(self, kwargs):
+        self.log("Turning on Sunrise entity %s" % self.args["entity_day"])
         self.turn_on(self.args["entity_day"])
   
 
     def sunset(self, kwargs):
+        self.log("Turning on Sunset entity %s" % self.args["entity_night"])
         self.turn_on(self.args["entity_night"])
