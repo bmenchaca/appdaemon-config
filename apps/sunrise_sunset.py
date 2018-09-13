@@ -33,9 +33,9 @@ class SunriseSunset(hass.Hass):
                 self.run_at_sunrise(self.sunrise)
         if "entity_night" in self.args:
             if "sunset_offset" in self.args:
-                self.run_at_sunrise(self.sunrise, offset=self.args["sunset_offset"])
+                self.run_at_sunset(self.sunset, offset=self.args["sunset_offset"])
             else:
-                self.run_at_sunrise(self.sunrise)
+                self.run_at_sunset(self.sunset)
     
 
     def sunrise(self, kwargs):
