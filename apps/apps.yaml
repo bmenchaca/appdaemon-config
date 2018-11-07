@@ -180,8 +180,8 @@ girls_hall_motion_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.girls_hall_occupancy
-  entity_on: switch.girls_hall_light_switch_4
-  entity_off: switch.girls_hall_light_switch_4
+  entity_on: switch.girls_hall_light_switch
+  entity_off: switch.girls_hall_light_switch
   constrain_input_select: input_select.house_mode,Evening,Night,Naptime
   off_delay: 60
   
