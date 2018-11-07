@@ -81,7 +81,7 @@ class PresenceAggregator(hass.Hass):
     def tracker_is_home(self, entity, attribute, old, new, kwargs):
         # If the old state was previously home as well, we should do nothing
         if old == self.args["trackers"][entity]:
-            self.log("Old and new stats are both home, not marking %s as home." % (entity))
+            #self.log("Old and new stats are both home, not marking %s as home." % (entity))
             return
         # Change the away/home balance
         self.away_count -= 1
