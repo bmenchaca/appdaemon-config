@@ -81,8 +81,8 @@ pantry_sensor_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.pantry_door_sensor
-  entity_on: switch.pantry_light_61
-  entity_off: switch.pantry_light_61
+  entity_on: switch.kitchen_pantry_light_switch
+  entity_off: switch.kitchen_pantry_light_switch
 
 laundry_room_closet_sensor_light:
   class: SensorLight
