@@ -95,8 +95,8 @@ master_closet_sensor_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.master_closet_door_sensor
-  entity_on: switch.master_closet_light_68
-  entity_off: switch.master_closet_light_68
+  entity_on: switch.master_closet_lights_switch
+  entity_off: switch.master_closet_lights_switch
 
 #  
 ###############################################################################
@@ -141,6 +141,16 @@ craft_room_switch_off:
   state: "off"
   sequence:
     - entity: scene.craft_room_switch_off
+      service: scene/turn_on
+      delay: 0
+
+family_room_switch_off:
+  class: Sequence
+  module: sequence
+  input: light.family_room_lights_level_2
+  state: "off"
+  sequence:
+    - entity: scene.family_room_lights_off
       service: scene/turn_on
       delay: 0
 #  
