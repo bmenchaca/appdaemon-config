@@ -153,6 +153,17 @@ family_room_switch_off:
     - entity: scene.family_room_lights_off
       service: scene/turn_on
       delay: 0
+
+entry_lights_switch_off:
+  class: Sequence
+  module: sequence
+  input: switch.entry_hall_lights_swich
+  state: "off"
+  sequence:
+    - entity: scene.entry_hall_off
+      service: scene/turn_on
+      delay: 0
+ 
 #  
 ###############################################################################
 
