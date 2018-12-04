@@ -25,56 +25,6 @@ house_mode_weekday:
 ###############################################################################
 
 ###############################################################################
-# Presence Automations
-# 
-ben_presence_aggregator:
-  class: PresenceAggregator
-  module: presence_aggregator
-  trackers:
-    device_tracker.life360_ben: "home"
-    binary_sensor.ben_beacon_home: "on"
-    device_tracker.bens_iphone: "home"
-  presence_select: input_select.ben_presence_dropdown
-  home_consensus: 2
-  away_consensus: 2
-  away_delay: 120
-  #home_delay: 
-  #home_state: 
-  #away_state:
-
-susan_presence_aggregator:
-  class: PresenceAggregator
-  module: presence_aggregator
-  trackers:
-    device_tracker.life360_susan: "home"
-    binary_sensor.susan_beacon_home: "on"
-    device_tracker.susans_iphone: "home"
-  presence_select: input_select.susan_presence_dropdown
-  home_consensus: 2
-  away_consensus: 2
-  away_delay: 120
-  #home_delay:
-  #home_state:
-  #away_state:
-
-heidi_presence_aggregator:
-  class: PresenceAggregator
-  module: presence_aggregator
-  trackers:
-    device_tracker.life360_heidi: "home"
-    binary_sensor.heidi_beacon_home: "on"
-    device_tracker.heidi_iphone: "home"
-  presence_select: input_select.heidi_presence_dropdown
-  home_consensus: 2
-  away_consensus: 2
-  away_delay: 120
-  #home_delay:
-  #home_state:
-  #away_state:
-#  
-###############################################################################
-
-###############################################################################
 # Door Automations
 # 
 pantry_sensor_light:
