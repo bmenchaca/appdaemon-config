@@ -212,7 +212,7 @@ game_room_motion_light_not_night:
   sensor: binary_sensor.game_room_occupancy
   entity_on: light.game_room_lights_level
   entity_off: light.game_room_lights_level
-  constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon, Evening
+  constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon,Evening
   off_delay: 600
 
 garage_motion_light:
