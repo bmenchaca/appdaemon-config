@@ -60,7 +60,7 @@ class SensorLight(hass.Hass):
     
 
     def activated(self, entity, attribute, old, new, kwargs):
-        #self.log("Motion detected: turning {} on".format(self.args["entity_on"]))
+        self.log("Motion detected: turning {} on".format(self.args["entity_on"]))
         params = {}
         if "entity_on_brightness" in self.args:
             params["brightness"] = self.args["entity_on_brightness"]
@@ -70,5 +70,5 @@ class SensorLight(hass.Hass):
   
 
     def quiesce(self, entity, attribute, old, new, kwargs):
-        #self.log("Motion stopped: turning {} off".format(self.args["entity_off"]))
+        self.log("Motion stopped: turning {} off".format(self.args["entity_off"]))
         self.turn_off(self.args["entity_off"])
