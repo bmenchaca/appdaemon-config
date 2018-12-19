@@ -41,7 +41,7 @@ class SensorLight(hass.Hass):
                                   new=entity_on_state)
             if "entity_off" in self.args:
                 if "entity_off_state" in self.args:
-                    entity_off_state = self.args["entity_on_state"]
+                    entity_off_state = self.args["entity_off_state"]
                 else:
                     entity_off_state = "off"
                 if "off_delay" in self.args:
