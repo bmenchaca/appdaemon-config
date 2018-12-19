@@ -196,7 +196,6 @@ gallery_hall_motion_light_night:
   constrain_input_select: input_select.house_time_of_day,Night
   off_delay: 60
 
-
 game_room_motion_light_night:
   class: SensorLight
   module: sensor_light
