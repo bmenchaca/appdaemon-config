@@ -48,6 +48,14 @@ master_closet_sensor_light:
   entity_on: switch.master_closet_lights_switch
   entity_off: switch.master_closet_lights_switch
 
+back_door_sensor_deck_lights:
+  class: SensorLight
+  module: sensor_light
+  sensor: binary_sensor.back_door
+  entity_on: scene.deck_lights_evening_on
+  entity_off: light.back_porch
+  constrain_input_select: input_select.house_time_of_day,Evening,Night
+
 #  
 ###############################################################################
 
@@ -114,25 +122,25 @@ entry_lights_switch_off:
       service: scene/turn_on
       delay: 0
 
-back_porch_switch_on:
-  class: Sequence
-  module: sequence
-  input: switch.back_porch_lights_switch_2
-  state: "on"
-  sequence:
-    - entity: scene.back_porch_on
-      service: scene/turn_on
-      delay: 0
+#back_porch_switch_on:
+#  class: Sequence
+#  module: sequence
+#  input: switch.back_porch_lights_switch_2
+#  state: "on"
+#  sequence:
+#    - entity: scene.deck_lights_evening
+#      service: scene/turn_on
+#      delay: 0
 
-back_porch_switch_off:
-  class: Sequence
-  module: sequence
-  input: switch.back_porch_lights_switch_2
-  state: "off"
-  sequence:
-    - entity: scene.back_porch_off
-      service: scene/turn_on
-      delay: 0
+#back_porch_switch_off:
+#  class: Sequence
+#  module: sequence
+#  input: switch.back_porch_lights_switch_2
+#  state: "off"
+#  sequence:
+#    - entity: light.back_porch
+#      service: light/turn_off
+#      delay: 0
  
 #  
 ###############################################################################
