@@ -280,9 +280,9 @@ front_door_motion_lights:
   module: sensor_light
   sensor: binary_sensor.ring_front_door_motion
   entity_on: switch.front_porch_light_switch
-  #entity_off: switch.front_porch_light_switch
+  entity_off: switch.front_porch_light_switch
   constrain_input_select: input_select.house_time_of_day,Evening,Night
-  #off_delay: 60
+  off_delay: 300
 
 #craft_room_motion_lights:
 #  class: SensorLight
