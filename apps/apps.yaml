@@ -78,11 +78,11 @@ garage_lights_at_night:
   entity_day: scene.garage_outdoor_lights_daytime
   entity_night: scene.garage_outdoor_lights_nighttime
 
-christmas_lights_at_night:
-  class: SunriseSunset
-  module: sunrise_sunset
-  entity_day: scene.christmas_lights_daytime
-  entity_night: scene.christmas_lights_nighttime
+#christmas_lights_at_night:
+#  class: SunriseSunset
+#  module: sunrise_sunset
+#  entity_day: scene.christmas_lights_daytime
+#  entity_night: scene.christmas_lights_nighttime
 
 #  
 ###############################################################################
