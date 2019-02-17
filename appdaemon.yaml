@@ -9,4 +9,4 @@ appdaemon:
       ha_url: 192.168.64.100:8123
       token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3YmFhZjE2NjU3NDM0NjhkYjUzOGI0MjNhMzQ3Y2UzZSIsImlhdCI6MTU1MDQyMjkwNiwiZXhwIjoxODY1NzgyOTA2fQ.Kz_O8z6mM8A6ZiPCOf-Jww3pBEQ_YwsvI_wEZFWiZGM
 hadashboard:
-  dash_url: http://192.168.64.100:5050
+  dash_url: http://192.168.64.100:5555
