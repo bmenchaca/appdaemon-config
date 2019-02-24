@@ -94,7 +94,7 @@ garage_lights_at_night:
 craft_room_switch_on:
   class: Sequence
   module: sequence
-  input: switch.craft_room_fan_and_lights_switch
+  input: switch.craft_fan_and_lights
   state: "on"
   sequence:
     - entity: scene.craft_room_switch_on
@@ -104,7 +104,7 @@ craft_room_switch_on:
 craft_room_switch_off:
   class: Sequence
   module: sequence
-  input: switch.craft_room_fan_and_lights_switch
+  input: switch.craft_fan_and_lights
   state: "off"
   sequence:
     - entity: scene.craft_room_switch_off
