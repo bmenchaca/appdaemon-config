@@ -243,8 +243,8 @@ guest_bathroom_motion_light_not_night:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.guest_bathroom_occupancy
-  entity_on: switch.guest_bathroom_lights_switch
-  entity_off: switch.guest_bathroom_lights_switch
+  entity_on: switch.guest_bath_lights
+  entity_off: switch.guest_bath_lights
   constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon,Evening
   off_delay: 600
 
