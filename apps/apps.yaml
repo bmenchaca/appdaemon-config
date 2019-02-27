@@ -235,8 +235,8 @@ garage_motion_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.garage_occupancy
-  entity_on: switch.garage_lights_switch
-  entity_off: switch.garage_lights_switch
+  entity_on: switch.garage_lights
+  entity_off: switch.garage_lights
   off_delay: 600
 
 guest_bathroom_motion_light_not_night:
