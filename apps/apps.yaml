@@ -217,8 +217,8 @@ game_room_motion_light_night:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.game_room_occupancy
-  entity_on: light.game_room_lights_level
-  entity_off: light.game_room_lights_level
+  entity_on: light.game_room_fan
+  entity_off: light.game_room_fan
   constrain_input_select: input_select.house_time_of_day,Night
   off_delay: 180
 
@@ -226,8 +226,8 @@ game_room_motion_light_not_night:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.game_room_occupancy
-  entity_on: light.game_room_lights_level
-  entity_off: light.game_room_lights_level
+  entity_on: light.game_room_fan
+  entity_off: light.game_room_fan
   constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon,Evening
   off_delay: 600
 
