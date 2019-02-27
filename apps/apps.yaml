@@ -38,8 +38,8 @@ laundry_room_closet_sensor_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.laundry_closet_door
-  entity_on: switch.laundry_room_closet_light_switch
-  entity_off: switch.laundry_room_closet_light_switch
+  entity_on: switch.laundry_closet_lights
+  entity_off: switch.laundry_closet_lights
 
 master_closet_sensor_light:
   class: SensorLight
