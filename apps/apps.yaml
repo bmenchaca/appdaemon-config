@@ -197,8 +197,8 @@ gallery_hall_motion_light_evening:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.gallery_occupancy
-  entity_on: switch.gallery_hall_lights_switch
-  entity_off: switch.gallery_hall_lights_switch
+  entity_on: switch.gallery_lights
+  entity_off: switch.gallery_lights
   constrain_input_select: input_select.house_time_of_day,Evening,Naptime
   off_delay: 60
 
