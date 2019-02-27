@@ -161,8 +161,8 @@ boys_hall_motion_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.boys_hall_occupancy
-  entity_on: switch.boys_hall_light_switch
-  entity_off: switch.boys_hall_light_switch
+  entity_on: switch.boys_hall_light
+  entity_off: switch.boys_hall_light
   constrain_input_select: input_select.house_time_of_day,Evening,Night,Naptime
   off_delay: 60
 
