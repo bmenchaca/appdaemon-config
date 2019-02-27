@@ -271,8 +271,8 @@ laundry_room_motion_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.laundry_room_occupancy
-  entity_on: switch.laundry_room_light_switch
-  entity_off: switch.laundry_room_light_switch
+  entity_on: switch.laundry_lights
+  entity_off: switch.laundry_lights
   off_delay: 60
 
 front_door_motion_lights:
