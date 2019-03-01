@@ -52,8 +52,9 @@ back_door_sensor_deck_lights:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.back_door
-  entity_on: scene.deck_lights_evening_on
-  #entity_off: light.back_porch
+  entity_on: scene.backyard_lights_evening_on
+  entity_off: scene.backyard_lights_off
+  #entity_off: light.back_yard
   constrain_input_select: input_select.house_time_of_day,Evening,Night
 
 front_door_sensor_lights:
