@@ -31,8 +31,8 @@ pantry_sensor_light:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.pantry_door
-  entity_on: switch.kitchen_pantry_lights
-  entity_off: switch.kitchen_pantry_lights
+  entity_on: switch.kitchen_pantry_light
+  entity_off: switch.kitchen_pantry_light
 
 laundry_room_closet_sensor_light:
   class: SensorLight
@@ -252,7 +252,7 @@ guest_bathroom_motion_light_night:
   class: SensorLight
   module: sensor_light
   sensor: binary_sensor.guest_bathroom_occupancy
-  entity_on: scene.guest_bath_nighttime
+  entity_on: scene.guest_bath_night_time
   entity_off: light.guest_bath
   constrain_input_select: input_select.house_time_of_day,Night
   off_delay: 120
