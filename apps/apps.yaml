@@ -160,7 +160,7 @@ entry_lights_switch_off:
 boys_hall_motion_light:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.boys_hall_occupancy
+  sensor: binary_sensor.boys_hall_motion
   entity_on: switch.boys_hall_light
   entity_off: switch.boys_hall_light
   constrain_input_select: input_select.house_time_of_day,Evening,Night,Naptime
@@ -169,7 +169,7 @@ boys_hall_motion_light:
 boys_bathroom_motion_light_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.boys_bathroom_occupancy
+  sensor: binary_sensor.boys_bathroom_motion
   entity_on: switch.boys_bathroom_light
   entity_off: switch.boys_bathroom_light
   constrain_input_select: input_select.house_time_of_day,Night
@@ -178,7 +178,7 @@ boys_bathroom_motion_light_night:
 boys_bathroom_motion_light_evening:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.boys_bathroom_occupancy
+  sensor: binary_sensor.boys_bathroom_motion
   entity_on: switch.boys_bathroom_light
   entity_off: switch.boys_bathroom_light
   constrain_input_select: input_select.house_time_of_day,Evening,Naptime
@@ -187,7 +187,7 @@ boys_bathroom_motion_light_evening:
 girls_hall_motion_light:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.girls_hall_occupancy
+  sensor: binary_sensor.girls_hall_motion
   entity_on: switch.girls_hall_lights
   entity_off: switch.girls_hall_lights
   constrain_input_select: input_select.house_time_of_day,Evening,Night,Naptime
@@ -196,7 +196,7 @@ girls_hall_motion_light:
 gallery_hall_motion_light_evening:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.gallery_occupancy
+  sensor: binary_sensor.gallery_motion
   entity_on: switch.gallery_lights
   entity_off: switch.gallery_lights
   constrain_input_select: input_select.house_time_of_day,Evening,Naptime
@@ -205,7 +205,7 @@ gallery_hall_motion_light_evening:
 gallery_hall_motion_light_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.gallery_occupancy
+  sensor: binary_sensor.gallery_motion
   entity_on: light.gallery
   entity_on_brightness: 10
   entity_on_color: "darkred"
@@ -216,7 +216,7 @@ gallery_hall_motion_light_night:
 game_room_motion_light_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.game_room_occupancy
+  sensor: binary_sensor.game_room_motion
   entity_on: light.game_room_fan
   entity_off: light.game_room_fan
   constrain_input_select: input_select.house_time_of_day,Night
@@ -225,7 +225,7 @@ game_room_motion_light_night:
 game_room_motion_light_not_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.game_room_occupancy
+  sensor: binary_sensor.game_room_motion
   entity_on: light.game_room_fan
   entity_off: light.game_room_fan
   constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon,Evening
@@ -242,7 +242,7 @@ garage_motion_light:
 guest_bathroom_motion_light_not_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.guest_bathroom_occupancy
+  sensor: binary_sensor.guest_bath_motion
   entity_on: switch.guest_bath_lights
   entity_off: switch.guest_bath_lights
   constrain_input_select: input_select.house_time_of_day,Morning,Day,Naptime,Afternoon,Evening
@@ -251,7 +251,7 @@ guest_bathroom_motion_light_not_night:
 guest_bathroom_motion_light_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.guest_bathroom_occupancy
+  sensor: binary_sensor.guest_bath_motion
   entity_on: scene.guest_bath_night_time
   entity_off: light.guest_bath
   constrain_input_select: input_select.house_time_of_day,Night
@@ -261,7 +261,7 @@ guest_bathroom_motion_light_night:
 boys_bathroom_motion_light_night:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.boys_bathroom_occupancy
+  sensor: binary_sensor.boys_bathroom_motion
   entity_on: switch.boys_bathroom_light_switch
   entity_off: switch.boys_bathroom_light_switch
   constrain_input_select: input_select.house_time_of_day,Night
@@ -270,7 +270,7 @@ boys_bathroom_motion_light_night:
 laundry_room_motion_light:
   class: SensorLight
   module: sensor_light
-  sensor: binary_sensor.laundry_room_occupancy
+  sensor: binary_sensor.laundry_motion
   entity_on: switch.laundry_lights
   entity_off: switch.laundry_lights
   off_delay: 60
