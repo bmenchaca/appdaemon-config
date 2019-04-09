@@ -6,21 +6,6 @@
 #  input_sensors: binary_sensor.guest_occupancy, binary_sensor.entry_occupancy
 #  output_sensor: sensor.downstairs_last_motion
 
-###############################################################################
-# Input Select Automations
-# 
-#house_mode_weekday:
-#  class: TimedInputSelect
-#  module: timed_input_select
-#  selector: input_select.house_time_of_day
-#  schedule:
-#    Morning: "06:00:00"
-#    Day: "08:00:00"
-#    Naptime: "13:00:00"
-#    Afternoon: "15:00:00"
-#    Evening: "18:00:00"
-#    Night: "21:30:00"
-
 #  
 ###############################################################################
 
