@@ -34,5 +34,5 @@ class OccupancyActivate(hass.Hass):
             self.log("No sensor specified, doing nothing")
     
     def activated(self, entity, attribute, old, new, kwargs):
-        self.log("Sendor activated: turning {} on".format(self.args["entity"]))
+        self.log("Occupancy activated: Sensor %s is on, so turning %s on" % (self.args["sensor"], self.args["entity"]))
         self.turn_on(self.args["entity"])
