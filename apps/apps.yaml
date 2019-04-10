@@ -12,6 +12,7 @@
 ###############################################################################
 # Door Automations
 # 
+# FIXME
 pantry_sensor_light:
   class: SensorLight
   module: sensor_light
@@ -19,6 +20,7 @@ pantry_sensor_light:
   entity_on: switch.kitchen_pantry_light
   entity_off: switch.kitchen_pantry_light
 
+# FIXME
 laundry_room_closet_sensor_light:
   class: SensorLight
   module: sensor_light
@@ -26,6 +28,7 @@ laundry_room_closet_sensor_light:
   entity_on: switch.laundry_closet_lights
   entity_off: switch.laundry_closet_lights
 
+# FIXME
 master_closet_sensor_light:
   class: SensorLight
   module: sensor_light
@@ -33,14 +36,7 @@ master_closet_sensor_light:
   entity_on: switch.master_closet_lights
   entity_off: switch.master_closet_lights
 
-back_door_occupancy_deck_lights:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.back_door
-  entity: scene.backyard_lights_evening_on
-  constrain_start_time: sunset - 01:00:00
-  constrain_stop_time: sunrise + 01:00:00
-
+# FIXME
 front_door_sensor_lights:
   class: SensorLight
   module: sensor_light
@@ -270,9 +266,60 @@ guest_bathroom_vacancy_light_night:
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
-# Gallery
+# Master Hall
+# Lights on full on motion during the day
+# Only middle light on red at night
+# Lights off after 10 minutes during the day
+# Lights off after 1 minute at night
+master_hall_occupancy_not_night:
+  class: OccupancyActivate
+  module: occupancy_activate
+  sensor: binary_sensor.master_hall_motion
+  entity: scene.master_hall_not_night
+  constrain_input_boolean: input_boolean.bedtime,off
 
+master_hall_occupancy_night:
+  class: OccupancyActivate
+  module: occupancy_activate
+  sensor: binary_sensor.master_hall_motion
+  entity: scene.master_hall_night
+  constrain_input_boolean: input_boolean.bedtime
 
+master_hall_vacancy_light_not_night:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.master_hall_motion
+  entity: switch.master_hall_lights
+  delay: 600
+  constrain_input_boolean: input_boolean.bedtime,off
+
+master_hall_vacancy_light_night:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.master_hall_motion
+  entity: switch.master_hall_lights
+  delay: 60
+  constrain_input_boolean: input_boolean.bedtime
+
+# Deck
+# Turn on in the evening if the door opens
+# Turn off always if there is not motion for 5 minutes
+deck_occupancy_lights:
+  class: OccupancyActivate
+  module: occupancy_activate
+  sensor: binary_sensor.back_door
+  entity: scene.backyard_lights_evening_on
+  constrain_start_time: sunset - 01:00:00
+  constrain_stop_time: sunrise + 01:00:00
+
+deck_vacancy_light:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.deck_motion
+  scene: scene.backyard_lights_off
+  delay: 300
+
+# FIXME
 front_door_motion_lights:
   class: SensorLight
   module: sensor_light
@@ -285,6 +332,7 @@ front_door_motion_lights:
 
 # Garage 
 
+# FIXME
 garage_motion_light:
   class: SensorLight
   module: sensor_light
@@ -293,6 +341,7 @@ garage_motion_light:
   entity_off: switch.garage_lights
   off_delay: 600
 
+# FIXME
 laundry_room_motion_light:
   class: SensorLight
   module: sensor_light
