@@ -283,7 +283,6 @@ master_hall_occupancy_night:
   module: occupancy_activate
   sensor: binary_sensor.dining_stairs_or_master_hall_motion
   entity: scene.master_hall_night
-  constrain_input_boolean: input_boolean.bedtime
 
 master_hall_vacancy_light_not_night:
   class: VacancyDeactivate
@@ -299,7 +298,7 @@ master_hall_vacancy_light_night:
   sensor: binary_sensor.dining_stairs_or_master_hall_motion
   entity: light.master_hall
   delay: 60
-  constrain_input_boolean: input_boolean.bedtime
+
 
 # Deck
 # Turn on in the evening if the door opens
@@ -324,7 +323,7 @@ deck_vacancy_light:
 family_occupancy_night:
   class: OccupancyActivate
   module: occupancy_activate
-  sensor: binary_sensor.family_mantle_and_breakfast_motion
+  sensor: binary_sensor.family_mantle_or_breakfast_motion
   entity: scene.family_night
   constrain_input_boolean: input_boolean.bedtime
 
