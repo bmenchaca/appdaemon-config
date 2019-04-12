@@ -262,7 +262,7 @@ guest_bathroom_vacancy_light_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
   sensor: binary_sensor.guest_bath_motion
-  entity: switch.guest_bath_lights
+  entity: light.guest_bath
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
@@ -281,7 +281,7 @@ master_hall_occupancy_not_night:
 master_hall_occupancy_night:
   class: OccupancyActivate
   module: occupancy_activate
-  sensor: binary_sensor.master_hall_motion
+  sensor: binary_sensor.dining_stairs_or_master_hall_motion
   entity: scene.master_hall_night
   constrain_input_boolean: input_boolean.bedtime
 
@@ -296,8 +296,8 @@ master_hall_vacancy_light_not_night:
 master_hall_vacancy_light_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
-  sensor: binary_sensor.master_hall_motion
-  entity: switch.master_hall_lights
+  sensor: binary_sensor.dining_stairs_or_master_hall_motion
+  entity: light.master_hall
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
@@ -319,6 +319,25 @@ deck_vacancy_light:
   scene: scene.backyard_lights_off
   delay: 300
 
+# Family Room
+# At night, turn on the mantle light if there is motion
+family_occupancy_night:
+  class: OccupancyActivate
+  module: occupancy_activate
+  sensor: binary_sensor.family_mantle_and_breakfast_motion
+  entity: scene.family_night
+  constrain_input_boolean: input_boolean.bedtime
+
+family_vacancy_night:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.deck_motion
+  entity: light.family_mantle_bulb
+  delay: 60
+  constrain_input_boolean: input_boolean.bedtime
+
+
+
 # FIXME
 front_door_motion_lights:
   class: SensorLight
@@ -328,7 +347,6 @@ front_door_motion_lights:
   entity_off: switch.front_porch_lights
   constrain_input_select: input_select.house_time_of_day,Evening,Night
   off_delay: 300
-
 
 # Garage 
 
