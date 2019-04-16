@@ -227,7 +227,7 @@ game_room_vacancy_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
   sensor: binary_sensor.game_room_motion
-  entity: light.game_room_fan
+  entity: switch.game_room_lights
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
