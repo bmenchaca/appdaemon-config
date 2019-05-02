@@ -223,6 +223,14 @@ game_room_occupancy_night:
   entity: scene.game_room_night
   constrain_input_boolean: input_boolean.bedtime
 
+game_room_vacancy_not_night:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.game_room_motion
+  entity: switch.game_room_lights
+  delay: 900
+  constrain_input_boolean: input_boolean.bedtime,off
+
 game_room_vacancy_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
@@ -265,6 +273,25 @@ guest_bathroom_vacancy_light_night:
   entity: light.guest_bath
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
+
+# Guest Room
+# Lights on full on motion during the day
+# Lights off on no motion during the day
+# Do nothing automatically at night
+guest_room_occupancy_day:
+  class: OccupancyActivate
+  module: occupancy_activate
+  sensor: binary_sensor.guest_motion
+  entity: light.guest
+  constrain_input_boolean: input_boolean.bedtime,off
+
+guest_room_vacancy_day:
+  class: VacancyDeactivate
+  module: vacancy_deactivate
+  sensor: binary_sensor.guest_motion
+  entity: light.guest
+  delay: 600
+  constrain_input_boolean: input_boolean.bedtime,off
 
 # Master Hall
 # Lights on full on motion during the day
