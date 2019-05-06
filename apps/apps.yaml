@@ -139,12 +139,12 @@ boys_hall_vacancy_light:
 # Lights come on with motion, except at night.
 # Lights always off after 60 seconds.
 
-girls_hall_occupancy_light:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.girls_hall_motion
-  entity: switch.girls_hall_lights
-  constrain_input_boolean: input_boolean.bedtime,off
+#girls_hall_occupancy_light:
+#  class: OccupancyActivate
+#  module: occupancy_activate
+#  sensor: binary_sensor.girls_hall_motion
+#  entity: switch.girls_hall_lights
+#  constrain_input_boolean: input_boolean.bedtime,off
 
 girls_hall_vacancy_light:
   class: VacancyDeactivate
@@ -183,12 +183,12 @@ boys_bathroom_vacancy_light_night:
 # Lights on full during the day when motion detected
 # Lights on nightlight at bedtime when motion detected
 # Lights off after 60 seconds of no motion
-gallery_occupancy_not_night:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.gallery_motion
-  entity: scene.gallery_day_time
-  constrain_input_boolean: input_boolean.bedtime,off
+#gallery_occupancy_not_night:
+#  class: OccupancyActivate
+#  module: occupancy_activate
+#  sensor: binary_sensor.gallery_motion
+#  entity: scene.gallery_day_time
+#  constrain_input_boolean: input_boolean.bedtime,off
 
 gallery_occupancy_night:
   class: OccupancyActivate
