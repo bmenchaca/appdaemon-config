@@ -337,8 +337,8 @@ deck_occupancy_lights:
   module: occupancy_activate
   sensor: binary_sensor.back_door
   entity: scene.backyard_lights_evening_on
-  constrain_start_time: sunset - 01:00:00
-  constrain_end_time: sunrise + 01:00:00
+  constrain_start_time: sunset - 00:30:00
+  constrain_end_time: sunrise + 00:30:00
 
 deck_vacancy_light:
   class: VacancyDeactivate
