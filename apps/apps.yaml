@@ -305,13 +305,6 @@ master_hall_occupancy_not_night:
   entity: scene.master_hall_not_night
   constrain_input_boolean: input_boolean.bedtime,off
 
-master_hall_occupancy_night:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.dining_stairs_or_master_hall_motion
-  entity: scene.master_hall_night
-  constrain_input_boolean: input_boolean.bedtime
-
 master_hall_vacancy_light_not_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
@@ -319,14 +312,6 @@ master_hall_vacancy_light_not_night:
   entity: switch.master_hall_lights
   delay: 600
   constrain_input_boolean: input_boolean.bedtime,off
-
-master_hall_vacancy_light_night:
-  class: VacancyDeactivate
-  module: vacancy_deactivate
-  sensor: binary_sensor.dining_stairs_or_master_hall_motion
-  entity: light.master_hall
-  delay: 60
-  constrain_input_boolean: input_boolean.bedtime
 
 
 # Deck
