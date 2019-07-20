@@ -94,7 +94,7 @@ craft_room_switch_off:
 family_room_switch_off:
   class: Sequence
   module: sequence
-  input: light.family_room_dimmer
+  input: switch.family_fan_lights
   state: "off"
   sequence:
     - entity: scene.family_room_lights_off
