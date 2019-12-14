@@ -248,7 +248,7 @@ guest_bathroom_occupancy_not_night:
   class: OccupancyActivate
   module: occupancy_activate
   sensor: binary_sensor.guest_bath_motion
-  entity: scene.guest_bath_day_time
+  entity: script.guest_bath_day_time
   constrain_input_boolean: input_boolean.bedtime,off
 
 guest_bathroom_occupancy_night:
