@@ -43,7 +43,7 @@ front_door_sensor_lights:
   sensor: binary_sensor.front_door
   entity_on: switch.front_porch_lights
   entity_off: switch.front_porch_lights
-  constrain_start_time: sunset - 01:00:00
+  constrain_start_time: sunset
   constrain_stop_time: sunrise + 01:00:00
   off_delay: 60
 
@@ -59,11 +59,11 @@ garage_lights_at_night:
   entity_day: scene.garage_outdoor_lights_daytime
   entity_night: scene.garage_outdoor_lights_nighttime
 
-#christmas_lights_at_night:
-#  class: SunriseSunset
-#  module: sunrise_sunset
-#  entity_day: scene.christmas_lights_daytime
-#  entity_night: scene.christmas_lights_nighttime
+christmas_lights_at_night:
+  class: SunriseSunset
+  module: sunrise_sunset
+  entity_day: scene.christmas_lights_daytime
+  entity_night: scene.christmas_lights_nighttime
 
 ###############################################################################
 
@@ -248,14 +248,14 @@ guest_bathroom_occupancy_not_night:
   class: OccupancyActivate
   module: occupancy_activate
   sensor: binary_sensor.guest_bath_motion
-  entity: scene.guest_bath_not_night
+  entity: scene.guest_bath_day_time
   constrain_input_boolean: input_boolean.bedtime,off
 
 guest_bathroom_occupancy_night:
   class: OccupancyActivate
   module: occupancy_activate
   sensor: binary_sensor.guest_bath_motion
-  entity: scene.guest_bath_night
+  entity: script.guest_bath_night_time
   constrain_input_boolean: input_boolean.bedtime
 
 guest_bathroom_vacancy_light_not_night:
