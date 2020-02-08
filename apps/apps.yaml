@@ -45,7 +45,7 @@ front_door_sensor_lights:
   entity_off: switch.front_porch_lights
   constrain_start_time: sunset
   constrain_stop_time: sunrise + 01:00:00
-  off_delay: 60
+  off_delay: 300
 
 ###############################################################################
 
@@ -67,51 +67,6 @@ christmas_lights_at_night:
 
 ###############################################################################
 
-
-###############################################################################
-# Triggered Sequences
-###############################################################################
-craft_room_switch_on:
-  class: Sequence
-  module: sequence
-  input: switch.craft_fan_and_lights
-  state: "on"
-  sequence:
-    - entity: scene.craft_room_switch_on
-      service: scene/turn_on
-      delay: 0
-
-craft_room_switch_off:
-  class: Sequence
-  module: sequence
-  input: switch.craft_fan_and_lights
-  state: "off"
-  sequence:
-    - entity: scene.craft_room_switch_off
-      service: scene/turn_on
-      delay: 0
-
-family_room_switch_off:
-  class: Sequence
-  module: sequence
-  input: switch.family_fan_lights
-  state: "off"
-  sequence:
-    - entity: scene.family_room_lights_off
-      service: scene/turn_on
-      delay: 0
-
-entry_lights_switch_off:
-  class: Sequence
-  module: sequence
-  input: switch.entry_hall_lights_swich
-  state: "off"
-  sequence:
-    - entity: scene.entry_hall_off
-      service: scene/turn_on
-      delay: 0
-
-###############################################################################
 
 ###############################################################################
 # Motion Lights
@@ -248,14 +203,14 @@ guest_bathroom_occupancy_not_night:
   class: OccupancyActivate
   module: occupancy_activate
   sensor: binary_sensor.guest_bath_motion
-  entity: script.guest_bath_day_time
+  entity: scene.guest_bath_day
   constrain_input_boolean: input_boolean.bedtime,off
 
 guest_bathroom_occupancy_night:
   class: OccupancyActivate
   module: occupancy_activate
   sensor: binary_sensor.guest_bath_motion
-  entity: script.guest_bath_night_time
+  entity: scene.guest_bath_night
   constrain_input_boolean: input_boolean.bedtime
 
 guest_bathroom_vacancy_light_not_night:
@@ -349,8 +304,6 @@ family_vacancy_night:
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
-
-
 # FIXME
 front_door_motion_lights:
   class: SensorLight
@@ -380,3 +333,49 @@ laundry_room_motion_light:
   entity_on: switch.laundry_lights
   entity_off: switch.laundry_lights
   off_delay: 60
+
+###############################################################################
+# Triggered Sequences
+###############################################################################
+craft_room_switch_on:
+  class: Sequence
+  module: sequence
+  input: switch.craft_fan_and_lights
+  state: "on"
+  sequence:
+    - entity: scene.craft_room_switch_on
+      service: scene/turn_on
+      delay: 0
+
+craft_room_switch_off:
+  class: Sequence
+  module: sequence
+  input: switch.craft_fan_and_lights
+  state: "off"
+  sequence:
+    - entity: scene.craft_room_switch_off
+      service: scene/turn_on
+      delay: 0
+
+family_room_switch_off:
+  class: Sequence
+  module: sequence
+  input: switch.family_fan_lights
+  state: "off"
+  sequence:
+    - entity: scene.family_room_lights_off
+      service: scene/turn_on
+      delay: 0
+
+entry_lights_switch_off:
+  class: Sequence
+  module: sequence
+  input: switch.entry_lights
+  state: "off"
+  sequence:
+    - entity: scene.entry_hall_off
+      service: scene/turn_on
+      delay: 0
+
+###############################################################################
+
