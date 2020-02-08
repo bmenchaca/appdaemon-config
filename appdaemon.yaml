@@ -1,12 +1,19 @@
-log:
-  logfile: STDOUT
-  errorfile: STDERR
+logs:
+  main_log:
+    filename: STDOUT
+  error_log:
+    filename: STDERR
+  
 appdaemon:
-  threads: 20
+  latitude: 30.497063
+  longitude: -97.768292
+  elevation: 273
+  time_zone: America/Chicago
+  threads: 40
   plugins:
     HASS:
       type: hass
       ha_url: http://192.168.64.100:8123
       token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3YmFhZjE2NjU3NDM0NjhkYjUzOGI0MjNhMzQ3Y2UzZSIsImlhdCI6MTU1MDQyMjkwNiwiZXhwIjoxODY1NzgyOTA2fQ.Kz_O8z6mM8A6ZiPCOf-Jww3pBEQ_YwsvI_wEZFWiZGM
-hadashboard:
-  dash_url: http://192.168.64.100:5055
+http:
+  url: http://192.168.64.100:5055
