@@ -379,6 +379,16 @@ entry_lights_switch_off:
       service: scene/turn_on
       delay: 0
 
+kids_study_switch_on:
+  class: Sequence
+  module: sequence
+  input: switch.kids_study_lights
+  state: "on"
+  sequence:
+    - entity: scene.kids_study_on
+      service: scene/turn_on
+      delay: 0
+
 kids_study_switch_off:
   class: Sequence
   module: sequence
