@@ -369,26 +369,6 @@ family_room_switch_off:
       service: scene/turn_on
       delay: 0
 
-entry_lights_switch_off:
-  class: Sequence
-  module: sequence
-  input: switch.entry_lights
-  state: "off"
-  sequence:
-    - entity: scene.entry_dining_off
-      service: scene/turn_on
-      delay: 0
-
-entry_lights_switch_on:
-  class: Sequence
-  module: sequence
-  input: switch.entry_lights
-  state: "off"
-  sequence:
-    - entity: scene.entry_dining_on
-      service: scene/turn_on
-      delay: 0
-
 kids_study_switch_on:
   class: Sequence
   module: sequence
