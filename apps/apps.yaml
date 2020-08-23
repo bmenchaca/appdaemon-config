@@ -409,6 +409,16 @@ entry_dining_switch_on:
       service: scene/turn_on
       delay: 0
 
+master_hall_switch_off_bedtime:
+  class: Sequence
+  module: sequence
+  input: switch.master_hall_lights
+  state: "off"
+  sequence:
+    - entity: scene.house_bed_time
+      service: scene/turn_on
+      delay: 0
+
 
 ###############################################################################
 
