@@ -414,6 +414,7 @@ master_hall_switch_off_bedtime:
   module: sequence
   input: switch.master_hall_lights
   state: "off"
+  constrain_input_select: input_select.house_time_of_day,Night
   sequence:
     - entity: scene.house_bed_time
       service: scene/turn_on
