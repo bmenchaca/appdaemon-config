@@ -59,11 +59,11 @@ garage_lights_at_night:
   entity_day: scene.garage_outdoor_lights_daytime
   entity_night: scene.garage_outdoor_lights_nighttime
 
-christmas_lights_at_night:
-  class: SunriseSunset
-  module: sunrise_sunset
-  entity_day: scene.christmas_lights_daytime
-  entity_night: scene.christmas_lights_nighttime
+#christmas_lights_at_night:
+#  class: SunriseSunset
+#  module: sunrise_sunset
+#  entity_day: scene.christmas_lights_daytime
+#  entity_night: scene.christmas_lights_nighttime
 
 ###############################################################################
 
@@ -178,14 +178,14 @@ game_room_occupancy_night:
   entity: scene.game_room_night
   constrain_input_boolean: input_boolean.bedtime
 
-game_room_vacancy_not_night:
-  class: VacancyDeactivate
-  module: vacancy_deactivate
-  sensor: binary_sensor.game_room_motion
+  #game_room_vacancy_not_night:
+  #  class: VacancyDeactivate
+  #module: vacancy_deactivate
+  #sensor: binary_sensor.game_room_motion
   #  entity: switch.game_room_lights
-  entity: light.game_room
-  delay: 900
-  constrain_input_boolean: input_boolean.bedtime,off
+  #entity: light.game_room
+  #delay: 900
+  #constrain_input_boolean: input_boolean.bedtime,off
 
 game_room_vacancy_night:
   class: VacancyDeactivate
@@ -359,6 +359,16 @@ craft_room_switch_off:
       service: scene/turn_on
       delay: 0
 
+family_room_switch_on:
+  class: Sequence
+  module: sequence
+  input: switch.family_fan_lights
+  state: "on"
+  sequence:
+    - entity: scene.family_room_lights_on
+      service: scene/turn_on
+      delay: 0
+
 family_room_switch_off:
   class: Sequence
   module: sequence
@@ -409,16 +419,16 @@ entry_dining_switch_on:
       service: scene/turn_on
       delay: 0
 
-master_hall_switch_off_bedtime:
-  class: Sequence
-  module: sequence
-  input: switch.master_hall_lights
-  state: "off"
-  constrain_input_select: input_select.house_time_of_day,Night
-  sequence:
-    - entity: scene.house_bed_time
-      service: scene/turn_on
-      delay: 0
+#master_hall_switch_off_bedtime:
+#  class: Sequence
+#  module: sequence
+#  input: switch.master_hall_lights
+#  state: "off"
+#  constrain_input_select: input_select.house_time_of_day,Night
+#  sequence:
+#    - entity: scene.house_bed_time
+#      service: scene/turn_on
+#      delay: 0
 
 
 ###############################################################################
