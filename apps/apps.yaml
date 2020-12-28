@@ -164,19 +164,19 @@ gallery_vacancy:
 # Lights on minimal on motion at night
 # Lights off on vacancy only at night
 
-game_room_occupancy_not_night:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.game_room_motion
-  entity: scene.game_room_not_night
-  constrain_input_boolean: input_boolean.bedtime,off
+#game_room_occupancy_not_night:
+#  class: OccupancyActivate
+#  module: occupancy_activate
+#  sensor: binary_sensor.game_room_motion
+#  entity: scene.game_room_not_night
+#  constrain_input_boolean: input_boolean.bedtime,off
 
-game_room_occupancy_night:
-  class: OccupancyActivate
-  module: occupancy_activate
-  sensor: binary_sensor.game_room_motion
-  entity: scene.game_room_night
-  constrain_input_boolean: input_boolean.bedtime
+#game_room_occupancy_night:
+#  class: OccupancyActivate
+#  module: occupancy_activate
+#  sensor: binary_sensor.game_room_motion
+#  entity: scene.game_room_night
+#  constrain_input_boolean: input_boolean.bedtime
 
   #game_room_vacancy_not_night:
   #  class: VacancyDeactivate
@@ -191,8 +191,8 @@ game_room_vacancy_night:
   class: VacancyDeactivate
   module: vacancy_deactivate
   sensor: binary_sensor.game_room_motion
-  #entity: switch.game_room_lights
-  entity: light.game_room
+  entity: switch.game_room_lights
+  #entity: light.game_room
   delay: 60
   constrain_input_boolean: input_boolean.bedtime
 
